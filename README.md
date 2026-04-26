@@ -3,7 +3,7 @@ Integrantes: Paúl Acuña - Dafne Dasso - Dámaris Villca
 Finance Radar: Automatización de Finanzas Personales vía API Middleware
 Este proyecto permite la captura y registro automático de movimientos financieros (ingresos y egresos) detectados a través de notificaciones de billeteras virtuales (como Mercado Pago). El sistema utiliza una arquitectura de microservicios y procesamiento de eventos para eliminar la carga manual de datos.
 
-🏗️ Arquitectura del Sistema
+Arquitectura del Sistema
 El sistema se basa en un flujo de datos desacoplado en tres capas:
 
 Capa de Captura (Android): Servicio de escucha de notificaciones que actúa como disparador (Trigger) ante eventos financieros.
@@ -12,7 +12,7 @@ Capa de Transporte (Ngrok + Flask): Un túnel seguro que expone un endpoint loca
 
 Capa de Gestión (Firefly III): Servidor financiero autohospedado en Docker que actúa como núcleo contable y base de datos.
 
-📋 Requisitos Previos
+Requisitos Previos
 Para desplegar este entorno en sus máquinas, necesitarán:
 
 Docker Desktop: Para correr la instancia de Firefly III.
@@ -23,7 +23,7 @@ Ngrok: Para exponer el servidor local de forma segura.
 
 Android con MacroDroid: Para la interceptación de las notificaciones reales.
 
-🚀 Instalación y Configuración
+Instalación y Configuración
 1. Servidor Financiero (Docker)
 Dentro de la carpeta del proyecto, utilicen el archivo docker-compose.yml proporcionado y ejecuten:
 
@@ -45,7 +45,7 @@ Bash
 ngrok http 5000
 Copien la URL https generada.
 
-📲 Configuración del Dispositivo (Interceptor)
+Configuración del Dispositivo (Interceptor)
 Para que el sistema sea 100% automático, se debe configurar una macro en MacroDroid:
 
 Trigger: Notificación recibida de la app "Mercado Pago".
@@ -63,8 +63,8 @@ Body (JSON): ```json
 
 
 
-🛠️ Cómo funciona el "Cerebro" (Procesamiento)
-El script de Python realiza las siguientes tareas de ingeniería:
+Cómo funciona el "Cerebro" (Procesamiento)
+Nuestra API realiza las siguientes tareas de ingeniería:
 
 Sanitización: Recibe el JSON y combina título y cuerpo para evitar pérdida de datos.
 
@@ -76,7 +76,7 @@ Lógica de Clasificación: Analiza palabras clave (Recibiste, Ingresó, Pagaste)
 
 Inyección vía REST API: Envía una petición autenticada a Firefly III para crear el registro de forma permanente.
 
-🧪 Pruebas y Demo
+Pruebas y Demo
 Para probar el funcionamiento sin recibir una transferencia real:
 
 Correr firefly_bridge.py.
