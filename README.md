@@ -1,3 +1,5 @@
+Integrantes: Paúl Acuña - Dafne Dasso - Dámaris Villca
+
 Finance Radar: Automatización de Finanzas Personales vía API Middleware
 Este proyecto permite la captura y registro automático de movimientos financieros (ingresos y egresos) detectados a través de notificaciones de billeteras virtuales (como Mercado Pago). El sistema utiliza una arquitectura de microservicios y procesamiento de eventos para eliminar la carga manual de datos.
 
